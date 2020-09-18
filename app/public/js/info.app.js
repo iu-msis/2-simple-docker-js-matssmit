@@ -1,4 +1,3 @@
-
 var app = new Vue({
   el: '#userProfile',
   data: {
@@ -7,7 +6,9 @@ var app = new Vue({
     userEmail:'',
     userCountry:'',
     userImage:'',
-    userImgThumb:''
+    userImgThumb:'',
+    userAge:'',
+    userDate:'',
   },
 
   created(){
@@ -23,10 +24,12 @@ var app = new Vue({
         console.log(userData);
         this.userName = userData.name.first;
         this.userLast = userData.name.last;
-        this.userEmail = userData.email;
+        this.userEmail = 'mailto:' +userData.email;
         this.userCountry = userData.nat;
         this.userImage = userData.picture.large;
         this.userImgThumb = userData.picture.thumbnail;
+        this.userAge = userData.dob.age;
+        this.userDate = userData.dob.date;
       })
     }
   }})

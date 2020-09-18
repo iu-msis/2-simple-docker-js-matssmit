@@ -46,21 +46,19 @@
               </p>
             <h2>Profile Picture</h2>
               <p>
-                <a href={{userImage}}><img src="{{userImgThumb}}" class="img-fluid img-thumbnail"></a>
+                <a v-bind:href="userImage"><img v-bind:src="userImgThumb" class="img-fluid img-thumbnail"></a>
               </p>
             <h2>Country</h2>
               <p>
                 {{userCountry}}
               </p>
             <h2>Birthday</h2>
-              <p>September 4th, 1996</p>
+              <p>{{userDate}}</p>
             <h2>Age</h2>
-              <p>24</p>
+              <p>{{userAge}}</p>
             <p>
-               <a href="mailto:"{{userEmail}}" class="btn btn-primary">Email me!</a></p>
-         </div>
-
-
+                 <a v-bind:href="userEmail" class="btn btn-primary">Email me!</a></p>
+             </div>
 
     <!-- END content -->
 
