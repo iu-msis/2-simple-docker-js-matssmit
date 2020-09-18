@@ -10,7 +10,7 @@
     <!-- my custom CSS goes here -->
     <link rel="stylesheet" href="css/style_sheet.css">
 
-    <title>Books</title>
+    <title>RandomUser.me API</title>
   </head>
   <body>
 
@@ -30,29 +30,35 @@
             <li class="nav-item">
               <a class="nav-link" href="books.html">Books</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="randomuser_info.html">RandomUser.me API</a>
+            </li>
           </ul>
         </div>
       </nav>
 
     <div class="container">
-        <div class="col-12">
+        <div id ='userProfile' class="col-12">
           <h1>User Information</h1>
-            <div id='userProfile'>
-              {{userCountry}}
-            </div>
-              <h2>Name</h2>
-                <p>Matt Smith</p>
-              <h2>Profile Picture</h2>
-                <a href=https://www.needpix.com/photo/download/281659/boy-bicycle-happy-bike-fun-kid-free-pictures-free-photos-free-images><img src="img/boy-563810_1280.jpg" class="img-fluid img-thumbnail"></a>
+            <h2>Name</h2>
+              <p>
+                {{userLast}}, {{userName}}
+              </p>
+            <h2>Profile Picture</h2>
+              <p>
+                <a href={{userImage}}><img src="{{userImgThumb}}" class="img-fluid img-thumbnail"></a>
+              </p>
             <h2>Country</h2>
-              <p>United States</p>
+              <p>
+                {{userCountry}}
+              </p>
             <h2>Birthday</h2>
-              <p>United States</p>
+              <p>September 4th, 1996</p>
             <h2>Age</h2>
               <p>24</p>
-            <p> <a href="mailto: matssmit@iu.edu" class="btn btn-primary">Email me!</a></p>
-        </div>
-    </div>
+            <p>
+               <a href="mailto:"{{userEmail}}" class="btn btn-primary">Email me!</a></p>
+         </div>
 
 
 
@@ -66,5 +72,6 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src='js/info.app.js'></script>
     </body>
 </html>

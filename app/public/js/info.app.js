@@ -9,7 +9,7 @@ var app = new Vue({
     userImage:'',
     userImgThumb:''
   },
-  
+
   created(){
     this.fetchUser();
   },
@@ -26,7 +26,7 @@ var app = new Vue({
         this.userEmail = userData.email;
         this.userCountry = userData.nat;
         this.userImage = userData.picture.large;
-        this.userImgThumg = userData.picture.thumbnail;
+        this.userImgThumb = userData.picture.thumbnail;
       })
     }
   }})
