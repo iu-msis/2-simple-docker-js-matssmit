@@ -26,6 +26,6 @@ var app = new Vue({
         this.userCountry = userData.nat;
         this.userImage = userData.picture.large;
         this.userImgThumg = userData.picture.thumbnail;
-        })
-      }
-    }})
+          })
+        }
+      }})
