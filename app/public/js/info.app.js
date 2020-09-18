@@ -1,23 +1,24 @@
+
 var app = new Vue({
   el: '#userProfile',
   data: {
-    userName: 'Matt',
-    userLast:'Smith',
-    userEmail: 'matssmit@iu.edu',
-    userCountry: 'United State',
-    userImage: '',
-    userImgThumb: '',
+    userName:'',
+    userLast:'',
+    userEmail:'',
+    userCountry:'',
+    userImage:'',
+    userImgThumb:''
   },
-
-  created() {
+  
+  created(){
     this.fetchUser();
   },
 
-  methods: {
-    fetchUser: function () {
+  methods:{
+    fetchUser:function(){
       fetch('https://randomuser.me/api/')
-      .then(response => response.json ())
-      .then (data => {
+      .then(response => response.json())
+      .then(data => {
         var userData = data.results[0];
         console.log(userData);
         this.userName = userData.name.first;
@@ -26,6 +27,6 @@ var app = new Vue({
         this.userCountry = userData.nat;
         this.userImage = userData.picture.large;
         this.userImgThumg = userData.picture.thumbnail;
-          })
-        }
-      }})
+      })
+    }
+  }})
