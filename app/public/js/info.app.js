@@ -29,7 +29,7 @@ var app = new Vue({
         this.userImage = userData.picture.large;
         this.userImgThumb = userData.picture.thumbnail;
         this.userAge = userData.dob.age;
-        this.userDate = userData.dob.date;
+        this.userDate = userData.dob.date.slice(0,10);
       })
     }
   }})
