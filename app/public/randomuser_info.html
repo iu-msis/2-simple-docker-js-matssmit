@@ -10,7 +10,7 @@
     <!-- my custom CSS goes here -->
     <link rel="stylesheet" href="css/style_sheet.css">
 
-    <title>Books</title>
+    <title>RandomUser.me API</title>
   </head>
   <body>
 
@@ -38,23 +38,32 @@
       </nav>
 
     <div class="container">
-        <div class="col-12">
+        <div id ='userProfile' class="col-12">
           <h1>User Information</h1>
             <h2>Name</h2>
-              <p>Matt Smith</p>
+              <p>
+                {{userLast}}, {{userName}}
+              </p>
             <h2>Profile Picture</h2>
-                <a href=https://www.needpix.com/photo/download/281659/boy-bicycle-happy-bike-fun-kid-free-pictures-free-photos-free-images><img src="img/boy-563810_1280.jpg" class="img-fluid img-thumbnail"></a>
+              <p>
+                <a v-bind:href="userImage"><img v-bind:src="userImgThumb" class="img-fluid img-thumbnail"></a>
+              </p>
             <h2>Country</h2>
-              <p>United States</p>
+              <p>
+                {{userCountry}}
+              </p>
             <h2>Birthday</h2>
-              <p>September 4, 1996</p>
+              <p>
+                {{userDate}}
+              </p>
             <h2>Age</h2>
-              <p>24</p>
-            <p> <a href="mailto: matssmit@iu.edu" class="btn btn-primary">Email me!</a></p>
-        </div>
-    </div>
-
-
+              <p>
+                {{userAge}}
+              </p>
+            <form v-on:submit.prevent = "fetchUser">
+              <button>Create New User Data</button>
+            </form>
+       </div>
 
     <!-- END content -->
 
@@ -67,8 +76,5 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <script src='js/info.app.js'></script>
-    <script>
-      new Tablesort(document.getElementById('biggumsbagels'));
-    </script>
     </body>
 </html>
