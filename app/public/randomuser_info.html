@@ -53,12 +53,17 @@
                 {{userCountry}}
               </p>
             <h2>Birthday</h2>
-              <p>{{userDate}}</p>
+              <p>
+                {{userDate}}
+              </p>
             <h2>Age</h2>
-              <p>{{userAge}}</p>
-            <p>
-                 <a v-bind:href="userEmail" class="btn btn-primary">Email me!</a></p>
-             </div>
+              <p>
+                {{userAge}}
+              </p>
+            <form v-on:submit.prevent = "fetchUser">
+              <button>Create New User Data</button>
+            </form>
+       </div>
 
     <!-- END content -->
 
