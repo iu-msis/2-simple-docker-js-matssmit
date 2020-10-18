@@ -1,31 +1,16 @@
-CREATE DATABASE matt;
+CREATE DATABASE matt1;
 
-USE matt;
+USE matt1;
 
-CREATE TABLE Patient (
-    patientGuid VARCHAR(64) PRIMARY KEY,
+CREATE TABLE Random_Users1 (
+	userId INTEGER PRIMARY KEY AUTO_INCREMENT,
     firstName VARCHAR(64),
-    lastName VARCHAR(64),
-    dob DATE DEFAULT NULL,
-    sexAtBirth CHAR(1) DEFAULT ''
+    lastName VARCHAR(64)
 );
 
-INSERT INTO Patient (patientGuid, firstName, lastName, dob, sexAtBirth) VALUES
-("SOME-REALLY-LONG-1234", "Sylvia", "Hernandez", "2012-09-01",  "F"),
-("SOME-REALLY-SHORT-5678", "Vish", "Balasubramanian", "1950-12-15",  "M"),
-("SOME-UNIQUE-ABCDE1", "J", "Doe", "1950-00-00",  ""),
-("SOME-DUMMY-DATA", "Pepper", "Potts", "1990-01-31",  "F");
+INSERT INTO Random_Users1 (userId, firstName, lastName) VALUES
+(1, "Matthew", "Smith"),
+(2, "Omkar", "Tamkhankar"),
+(3, "Nicole", "LaRue");
 
-CREATE TABLE PatientVisit (
-    visitId INTEGER PRIMARY KEY AUTO_INCREMENT,
-    patientGuid VARCHAR(64) UNIQUE,
-    visitDescription TEXT NOT NULL,
-    visitDateUtc DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    priority ENUM('low', 'medium', 'high') NOT NULL DEFAULT 'low'
-
-);
-
-INSERT INTO PatientVisit (visitId, patientGuid, visitDescription) VALUES
-(1, 'SOME-REALLY-LONG-1234', 'Anxiety from D&S');
-
-SELECT * FROM Patient;
+SELECT * FROM Random_Users1;

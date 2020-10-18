@@ -6,12 +6,12 @@ require 'common.php';
 $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
-$sql = 'SELECT * FROM Random_User';
+$sql = 'SELECT * FROM Random_Users1';
 $vars = [];
 
 if (isset($_GET['userId'])) {
   // This is an example of a parameterized query
-  $sql = 'SELECT * FROM Random_User WHERE userId = ?';
+  $sql = 'SELECT * FROM Random_Users1 WHERE userId = ?';
   $vars = [ $_GET['userId'] ];
 }
 
