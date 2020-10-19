@@ -39,30 +39,25 @@
           </ul>
         </div>
       </nav>
-    
-<div class="commentContainer">
-  <div id="userComments">
-    <table id=commentTable" class="table">
-      <thead>
-        <tr>
-          <th>ID #</th>
-          <th>Comment</th>
-        </tr>
-      </thead>
-      <tbody id="commentTableBody"></tbody>
-        <tr v-for="comment in comments">
-          <td> {{ comment.id }}</td>
-          <td> {{ comment.commentText }}</td>
-        </tr>
-        </tbody>
-    </table> 
-    <form id="newCommentForm" v-on.submit="handleNewCommentForm">
-      Comment: <br/>
-      <input type="text" name="Title" v-model="commentForm.commentText">
-      <button type="submit" id="submitNewComment">Submit Comment</button>
-    </form> 
-  </div>  
-</div>
+      <div id="userComments" class="container">
+        <table id="commentTable" class="table">
+          <thead>
+              <th>ID #</th>
+              <th>Comment</th>
+          </thead>
+          <tbody id="commentTableBody">
+            <tr v-for="comment in comments">
+              <td> {{ comment.id }}</td>
+              <td> {{ comment.commentText }}</td>
+            </tr>
+            </tbody>
+        </table> 
+        <form id="newCommentForm" v-on.submit="handleNewCommentForm">
+          Comment: <br/>
+          <input type="text" name="Title" v-model="commentForm.commentText">
+          <button type="submit" id="submitNewComment">Submit Comment</button>
+        </form> 
+      </div>  
 
     <!-- END content -->
 

@@ -1,30 +1,25 @@
 var app = new Vue({
     el: '#userComments',
     data: {
-        comments: []
-        //new user: {
-            //firstName: ''.
-            //lastName: '',
-            //userId: '',
-            // }
-        },
-  
-    methods:{  
-      fetchUser(){
-        fetch('api/comments/')
-        .then(response => response.json())
-        .then(json => {
-          this.comments=json;
-          console.log(this.comments);
-        });
+      comments: [],
+      commentForm: {}
+    },
+    methods: {  
+      getNewCommentForm() {
+        return {
+          commentText: ""
+        }
+      },
+      handleNewCommentForm( evt ) {
+//        fetch("api/comments/create.php")
       }
     },
     created(){
-      fetch('api/comments/')
+      fetch("api/comments/")
       .then(response => response.json())
       .then(json => {
-        this.comments=json;
-        console.log(this.comments);
-      });
-    },
-  });
+        this.comments = json;
+        console.log(this.comments)}
+      );
+    }
+  })
