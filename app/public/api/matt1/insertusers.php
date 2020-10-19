@@ -17,10 +17,9 @@ $stmt = $db->prepare(
 );
 
 $stmt->execute([
-  $_POST['patientGuid'],
-  $_POST['priority'],
-  $_POST['visitDateUtc'],
-  $_POST['visitDescription']
+  $_POST['userId'],
+  $_POST['firstName'],
+  $_POST['lastName'],
 ]);
 
 // If needed, get auto-generated PK from DB

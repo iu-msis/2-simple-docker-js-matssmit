@@ -34,36 +34,35 @@
               <a class="nav-link" href="randomuser_info.html">RandomUser.me API</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="details.html">Details</a>
+              <a class="nav-link" href="comments.html">Comments</a>
             </li>
           </ul>
         </div>
       </nav>
-
-    <div class="container">
-        <div id ='randomUsersId' class="col-12">
-          <h1>Details</h1>
-              <p>
-                <a v-bind:href="userImage"><img v-bind:src="userImgThumb" class="img-fluid img-thumbnail"></a>
-              </p>
-            <h2>First Name</h2>
-              <p>
-                {{firstName}}
-              </p>
-            <h2>Last Name</h2>
-              <p>
-                {{lastName}}
-              </p>
-            <h2>User ID</h2>
-              <p>
-                {{userId}}
-              </p>
-            <form v-on:submit.prevent = "fetchUser">
-              <button>Create New User Data</button>
-            </form>
-        </div>
-    </div>
     
+<div class="commentContainer">
+  <div id="userComments">
+    <table id=commentTable" class="table">
+      <thead>
+        <tr>
+          <th>ID #</th>
+          <th>Comment</th>
+        </tr>
+      </thead>
+      <tbody id="commentTableBody"></tbody>
+        <tr v-for="comment in comments">
+          <td> {{ comment.id }}</td>
+          <td> {{ comment.commentText }}</td>
+        </tr>
+        </tbody>
+    </table> 
+    <form id="newCommentForm" v-on.submit="handleNewCommentForm">
+      Comment: <br/>
+      <input type="text" name="Title" v-model="commentForm.commentText">
+      <button type="submit" id="submitNewComment">Submit Comment</button>
+    </form> 
+  </div>  
+</div>
 
     <!-- END content -->
 
@@ -77,6 +76,6 @@
     
     <!-- Vue.js scripts -->
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-    <script src='js/info.app.js'></script>
-    </body>
+    <script src='js/comments.app.js'></script>
+  </body>
 </html>
