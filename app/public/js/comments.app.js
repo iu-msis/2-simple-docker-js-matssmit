@@ -11,7 +11,8 @@ var app = new Vue({
         }
       },
       handleNewCommentForm( evt ) {
-//        fetch("api/comments/create.php")
+       fetch("api/comments/create.php")
+       JSON.stringify(this.commentForm)
       }
     },
     created(){
