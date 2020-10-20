@@ -46,13 +46,13 @@
               <th>Comment</th>
           </thead>
           <tbody id="commentTableBody">
-            <tr v-for="comment in comments">
+            <tr v-for="comment in commentList">
               <td> {{ comment.id }}</td>
               <td> {{ comment.commentText }}</td>
             </tr>
             </tbody>
         </table> 
-        <form id="newCommentForm" v-on.submit="handleNewCommentForm">
+        <form id="newCommentForm" @submit.prevent="handleNewCommentForm">
           Comment: <br/>
           <input type="text" name="Title" v-model="commentForm.commentText">
           <button type="submit" id="submitNewComment">Submit Comment</button>
